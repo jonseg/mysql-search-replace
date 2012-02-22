@@ -4,17 +4,17 @@ This class written in php, search a text massively on an entire mysql database a
 
 The usage is very simple:
 
-// Create an instace of the class
-$mysqlSearchAndReplace = new mysqlSearchAndReplace("myDatabase", "localhost", "root", "");
+	// Create an instace of the class
+	$mysqlSearchAndReplace = new mysqlSearchAndReplace("myDatabase", "localhost", "root", "");
 
-// Simple search and replace
-//$mysqlSearchAndReplace->searchAndReplace("old text", "new text");
+	// Simple search and replace
+	$mysqlSearchAndReplace->searchAndReplace("old text", "new text");
 
-// Case sensitive = true
-//$mysqlSearchAndReplace->searchAndReplace("Old Text", "New text", true);
+	// Case sensitive = true
+	$mysqlSearchAndReplace->searchAndReplace("Old Text", "New text", true);
 
-// We specify the tables where search
-//$mysqlSearchAndReplace->searchAndReplace("old text", "new text", true, array('tableOne', 'tableTwo'));
+	// We specify the tables where search
+	$mysqlSearchAndReplace->searchAndReplace("old text", "new text", true, array('tableOne', 'tableTwo'));
 
 
 

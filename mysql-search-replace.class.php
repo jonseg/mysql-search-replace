@@ -76,7 +76,7 @@ class mysqlSearchAndReplace
                             $search = strtolower($search);
                         }
 
-                        if(strpos($field_value,$search) > 0 || $field_value == $search)
+                        if(strpos($field_value,$this->fromStr) !== false || $field_value == $search)
                         {
 
                             foreach ($fields as $field)
@@ -95,7 +95,7 @@ class mysqlSearchAndReplace
                                 $field_value = str_ireplace($search,$replace,$r[$field_name]);
                             }
 
-                            $field_value = str_replace("'", '"', $field_value);
+                            $field_value = addslashes($field_value);
                             $update = "UPDATE ".$table." SET `".$field_name.'` = \''.$field_value.'\' WHERE `'.$field_key.'` = \''.$r[$field_key]."'";
 
                             @mysql_query($update);
